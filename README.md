@@ -1,1 +1,1 @@
-# API Connector to fetch power usage data from Contact Enegry NZ utilities provider
+# API Connector to fetch power usage data from Contact Energy NZ utilities provider

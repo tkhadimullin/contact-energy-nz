@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [tool.poetry]
 name = "contact-energy-nz"
 version = "0.1.0"
-description = "API Connector to fetch usage data from Contact Enegry NZ utilities provider"
+description = "API Connector to fetch usage data from Contact Energy NZ utilities provider"
 authors = ["TKhadimullin"]
 license = "MIT"
 
