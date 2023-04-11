@@ -6,8 +6,8 @@ from typing import Any
 import aiohttp
 import logging
 
-from contact_enegry_nz.usage_datum import UsageDatum
-from contact_enegry_nz.consts import API_BASE_URL, API_KEY
+from contact_energy_nz.usage_datum import UsageDatum
+from contact_energy_nz.consts import API_BASE_URL, API_KEY
 
 _LOGGER = logging.getLogger(__name__)
 
