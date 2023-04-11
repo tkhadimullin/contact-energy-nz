@@ -7,7 +7,7 @@ name = "contact-energy-nz"
 version = "0.1.0"
 description = "API Connector to fetch usage data from Contact Energy NZ utilities provider"
 authors = ["TKhadimullin"]
-license = "MIT"
+license = {text = "MIT"}
 
 [tool.poetry.dependencies]
 python = "^3.10.0"
