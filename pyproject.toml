@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.poetry]
+name = "contact-energy-nz"
+version = "0.1.0"
+description = "API Connector to fetch usage data from Contact Enegry NZ utilities provider"
+authors = ["TKhadimullin"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10.0"
+aiohttp = "^3.7.4"
+
+[tool.poetry.dev-dependencies]
+black = "^21.12b0"
+pylint = "^2.11.1"
+pytest = "^6.2.5"
+aioresponses = "^0.7.4"
+
+[tool.black]
+line-length = 79
+target-version = ['py38']
+
+[tool.pytest]
+testpaths = [
+    "tests",
+]
+norecursedirs = [
+    ".git",
+]
+log_format = "%(asctime)s.%(msecs)03d %(levelname)-8s %(threadName)s %(name)s:%(filename)s:%(lineno)s %(message)s"
+log_date_format = "%Y-%m-%d %H:%M:%S"
+asyncio_mode = "auto"
+filterwarnings = ["error::sqlalchemy.exc.SAWarning"]
+addopts = "--verbose"
+
+[tool.isort]
+profile = "black"
+# will group `import x` and `from x import` of the same module.
+force_sort_within_sections = true
+combine_as_imports = true

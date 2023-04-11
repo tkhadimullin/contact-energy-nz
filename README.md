@@ -1,0 +1,1 @@
+# API Connector to fetch power usage data from Contact Enegry NZ utilities provider

@@ -1,0 +1,2 @@
+API_BASE_URL = "https://api.contact-digital-prod.net"
+API_KEY = "z840P4lQCH9TqcjC9L2pP157DZcZJMcr5tVQCvyx" # this can be easily obtained via borwser dev tools on the website, I don't believe this to be secret
