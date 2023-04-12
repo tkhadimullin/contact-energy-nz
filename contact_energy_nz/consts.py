@@ -1,2 +1,2 @@
 API_BASE_URL = "https://api.contact-digital-prod.net"
-API_KEY = "z840P4lQCH9TqcjC9L2pP157DZcZJMcr5tVQCvyx" # this can be easily obtained via borwser dev tools on the website, I don't believe this to be secret
+API_KEY = "kbIthASA7e1M3NmpMdGrn2Yqe0yHcCjL4QNPSUij" # this can be obtained from https://myaccount.contact.co.nz/main.<hash>.esm.js, I don't believe this to be secret
