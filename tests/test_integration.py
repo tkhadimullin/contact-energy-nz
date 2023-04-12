@@ -20,7 +20,6 @@ async def api_client() -> ContactEnergyApi:
     await api.account_summary()
     return api
 
-
 def test_should_be_able_to_login_with_credentials(api_client):
     # we should get the token
     assert api_client.token 
