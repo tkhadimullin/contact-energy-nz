@@ -1,6 +1,9 @@
 import datetime
 
+from attr import dataclass
 
+
+@dataclass
 class UsageDatum:
     """Helper class for data manipulation"""
 
