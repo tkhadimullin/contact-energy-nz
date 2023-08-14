@@ -19,7 +19,7 @@ This library supports a subset of operations: authenticate, get default account 
 To install the Contact Energy Python API Library, you can use `pip`, the Python package manager:
 
 ```bash
-pip install contact-energy-api
+pip install contact-energy-nz
 ```
 
 ## Usage
