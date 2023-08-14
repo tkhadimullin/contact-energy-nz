@@ -10,6 +10,11 @@ authors = [
     {name = "Tkhadimullin", email = "hello@wiseowls.co.nz"}
 ]
 license = {text = "MIT"}
+readme = "README.md"
+
+[project.urls]
+"Homepage" = "https://github.com/tkhadimullin/contact-energy-nz"
+"Bug Tracker" = "https://github.com/tkhadimullin/contact-energy-nz/issues"
 
 [tool.poetry.dependencies]
 python = "^3.10.0"
