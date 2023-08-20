@@ -7,7 +7,7 @@ import aiohttp
 import logging
 
 from .usage_datum import UsageDatum
-from .consts import API_BASE_URL, API_AUTH_URL, API_KEY
+from .consts import API_BASE_URL, API_KEY
 
 _LOGGER = logging.getLogger(__name__)
 
