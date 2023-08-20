@@ -46,11 +46,11 @@ class ContactEnergyApi:
             headers = {"x-api-key": API_KEY}
             data = {"username": self.username, "password": self.password}
             async with session.post(
-                API_AUTH_URL, headers=headers, json=data
+                f"{API_BASE_URL}/login/v2", headers=headers, json=data
             ) as response:
                 try:
                     response_json = await response.json()
-                    self.token = response_json.get("Data", {}).get("Token", "")
+                    self.token = response_json.get("token", "")
                     return self.token
                 except AttributeError as e:
                     raise AuthException(f"Error accessing JSON fields: {e}")
