@@ -27,7 +27,7 @@ pip install contact-energy-nz
 To get started, import API and main data types into code:
 
 ```python
-from contact_enegry_nz import AuthException, ContactEnergyApi, UsageDatum
+from contact_energy_nz import AuthException, ContactEnergyApi, UsageDatum
 ```
 
 ## Authentication
@@ -37,7 +37,7 @@ Before making API calls, you'll need to authenticate with Contact Energy and obt
 Library also needs an API key that presumably identifies the client to the backend. The value currently shipping with the library comes from `myaccount.contact.co.nz` website. It can be verified/updated by downloading the latest `https://myaccount.contact.co.nz/main.<hash>.esm.js` file (search for `x-api-key` in there). Since it's so easy to obtain I don't consider it to be very secret.
 
 ```python
-from contact_enegry_nz import AuthException, ContactEnergyApi
+from contact_energy_nz import AuthException, ContactEnergyApi
 
     try:
         async with async_timeout.timeout(TIMEOUT):
