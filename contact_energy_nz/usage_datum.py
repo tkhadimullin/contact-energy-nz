@@ -12,7 +12,12 @@ class UsageDatum:
             json_item["date"], "%Y-%m-%dT%H:%M:%S.%f%z"
         )
         self.value = float(json_item["value"])
-        self.dollar_value = float(json_item["dollarValue"])
+
+        try:
+            self.dollar_value = float(json_item["dollarValue"])
+        except (TypeError, ValueError):
+            self.dollar_value = None
+
         try:
             self.offpeak_value = float(json_item["offpeakValue"])
         except (TypeError, ValueError):
