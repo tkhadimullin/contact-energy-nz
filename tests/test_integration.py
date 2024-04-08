@@ -35,3 +35,13 @@ async def test_should_be_able_to_get_monthly_usage_for_current_month(api_client)
     
     assert results
     assert results.date.month == current_month
+
+@pytest.mark.asyncio
+async def test_should_be_able_to_get_hourly_usage(api_client):
+    # Timedelta as hourly usage doesn't get updated for a few days
+    day_to_test = datetime.date.today() - datetime.timedelta(weeks=1)
+    results = await api_client.get_hourly_usage(day_to_test)
+
+    assert results
+    assert results[0].date.day == day_to_test.day
+    assert results[0].date.hour == 0
