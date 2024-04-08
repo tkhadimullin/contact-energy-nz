@@ -294,6 +294,18 @@ Call to `/usage/v2/{contract_id}?ba={account_id}&interval=monthly&from=YYY-MM-DD
 ]
 ```
 
+#### To get hourly data
+
+```python
+try:
+    async with async_timeout.timeout(TIMEOUT):
+        data = await connector.get_hourly_usage(date.fromisoformat("2024-04-08"))
+    except asyncio.TimeoutError as e:
+        pass # handle timeout
+```
+
+Call to `/usage/v2/{contract_id}?ba={account_id}&interval=hourly&from=YYY-MM-DD&to=YYYY-MM-DD` returns the same structure as above.
+
 ## Contributing
 Contributions are welcome and encouraged. If you want to add new features, please feel free to open PRs here.
 

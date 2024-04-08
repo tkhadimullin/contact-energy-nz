@@ -130,3 +130,18 @@ class ContactEnergyApi:
             key=lambda x: x.date,
             reverse=True,
         )
+
+    async def get_hourly_usage(self, date: datetime) -> list[UsageDatum]:
+        """Query hourly usage stats for a given day"""
+        formatted_date = date.strftime("%Y-%m-%d")
+
+        # `to` parameter may be unnecessary, the api only returns the data
+        # for the day specified in `from`, but the javascript on the website
+        # always puts the `to` parameter in anyway.
+        url = f"{API_BASE_URL}/usage/v2/{self.contract_id}?ba={self.account_id}&interval=hourly&from={formatted_date}&to={formatted_date}"
+        hourly_stats = await self._try_fetch_data(url, "post")
+        return sorted(
+            [UsageDatum(item) for item in hourly_stats],
+            key=lambda x: x.date,
+            reverse=False,  # We want the data to be in order from start of the day to the end of the day
+        )
