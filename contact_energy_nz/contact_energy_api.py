@@ -50,9 +50,9 @@ class ContactEnergyApi:
             ) as response:
                 try:
                     response_json = await response.json()
-                    self.token = response_json.get("token", "")
+                    self.token = response_json["token"]
                     return self.token
-                except AttributeError as e:
+                except KeyError as e:
                     raise AuthException(f"Error accessing JSON fields: {e}")
 
     def _set_headers(self) -> dict[str, str]:
@@ -87,6 +87,7 @@ class ContactEnergyApi:
         """Helper method to query account summary and determine account/contract id"""
         accounts = await self._try_fetch_data(f"{API_BASE_URL}/accounts/v2?ba=")
         account_summary = accounts.get("accountsSummary", [])
+        _LOGGER.debug(account_summary)
         if not account_summary:
             raise ValueError("No account_summary found in API response")
 
