@@ -3,16 +3,23 @@ import datetime
 import os
 import pytest
 import pytest_asyncio
-from contact_energy_nz import ContactEnergyApi
+from contact_energy_nz import ContactEnergyApi, AuthException
 from dotenv import load_dotenv
+import logging
 
 load_dotenv()
+_LOGGER = logging.getLogger(__name__)
 
 @pytest.fixture(scope="session")
 def event_loop():
     loop = asyncio.get_event_loop()
     yield loop
     loop.close()
+
+@pytest.mark.asyncio
+async def test_authentication_fails(api_client):
+    with pytest.raises(AuthException) as _:
+        api = await ContactEnergyApi.from_credentials(os.environ["CONTACT_USERNAME"], "invalid password")
 
 @pytest_asyncio.fixture(scope="session")
 async def api_client() -> ContactEnergyApi: 
