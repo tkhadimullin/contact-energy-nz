@@ -18,7 +18,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10.0"
-aiohttp = "^3.7.4"
+aiohttp = "^3.14.0"
 
 [tool.poetry.dev-dependencies]
 black = "^21.12b0"
