@@ -21,7 +21,7 @@ python = "^3.10.0"
 aiohttp = "^3.14.4"
 
 [tool.poetry.dev-dependencies]
-black = "^26.3"
+black = "^26.10"
 pylint = "^2.11.1"
 pytest = "^9.0.3"
 pytest-asyncio = "^0.21.0"
